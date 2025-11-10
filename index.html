@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CamFy | Spotify Personalizado</title>
+
+  <!-- Tipografía profesional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#1db954" viewBox="0 0 24 24"><path d="M12 0C5.3729 0 0 5.3726 0 12C0 18.6273 5.3729 24 12 24C18.6271 24 24 18.6273 24 12C24 5.3726 18.6271 0 12 0ZM17.0165 17.1688C16.8422 17.4631 16.4728 17.5541 16.1784 17.3798C13.3232 15.6984 9.59626 15.2469 5.67815 16.1447C5.34722 16.2185 5.00903 16.013 4.93516 15.6818C4.8616 15.3513 5.0669 15.013 5.3977 14.9395C9.70736 13.9783 13.7443 14.4891 16.8965 16.2894C17.1908 16.4637 17.2909 16.8744 17.0165 17.1688ZM17.9094 14.9758C17.667 15.3725 17.1517 15.5007 16.755 15.2583C13.4899 13.2807 8.71362 12.7922 4.93014 13.9182C4.48682 14.0502 4.02254 13.7938 3.89064 13.3512C3.75874 12.9078 4.01512 12.4435 4.45774 12.3116C8.66561 11.0868 13.8754 11.6219 17.5627 13.8004C17.9594 14.0428 18.1518 14.5791 17.9094 14.9758ZM18.0711 12.622C14.357 10.4384 8.52854 10.2697 4.74215 11.3595C4.23982 11.5038 3.71283 11.2179 3.56843 10.716C3.42415 10.2137 3.7102 9.6868 4.21251 9.54237C8.38801 8.3462 14.6962 8.54057 18.8914 10.9446C19.3613 11.213 19.5189 11.8186 19.2505 12.2885C18.982 12.7585 18.3764 12.916 18.0711 12.622Z"/></svg>
+        <h1>Camify</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><i data-lucide="home"></i> Inicio</li>
+          <li><i data-lucide="heart"></i> Playlist especial</li>
+          <li><i data-lucide="user"></i> Para cami</li>
+        </ul>
+      </nav>
+    </aside>
+
+     <!-- Cartel de bienvenida -->
+    <div id="welcomeModal" class="welcome-modal">
+      <div class="welcome-content">
+        <h2>Bienvenida a CamiFy 💚</h2>
+        <p>El spotify favorito del porlan!!
+        Hecho con amor por Samu 💫</p>
+        <button id="closeWelcome">Entrar</button>
+      </div>
+    </div>
+
+        <!-- Main -->
+    <main class="main">
+      <!-- Sección: Inicio -->
+      <section id="inicio" class="section active">
+        <header class="header">
+          <h2>Favoritos de la Cami 💚</h2>
+          <p>Hecha por Samu</p>
+        </header>
+        <div class="grid" id="songList"></div>
+      </section>
+
+      <!-- Sección: Playlist especial -->
+      <section id="playlist" class="section">
+        <header class="header">
+          <h2>💖Playlist : Cualidades</h2>
+          <p>Detalles que te hacen especial...</p>
+        </header>
+        <div class="grid" id="specialList">
+          <!-- se rellena desde JS -->
+        </div>
+      </section>
+
+      <!-- Sección: Sobre ti -->
+      <section id="sobreti" class="section">
+        <header class="header">
+          <h2>Para cami</h2>
+          <p></p>
+        </header>
+        <div class="about">
+          <img src="fotosporlan/Camilu.jpeg" alt="Cami" class="about-img">
+          <p class="about-text">
+            Cami, este pequeño proyecto está hecho solamente para vos, es como un añadido a tu regalito.<br>
+            Usé las canciones que me dijiste que te gustaban mucho, las fotos que pude encontrar en mi celu, y tus cualidades que me pareció bueno destacar, espero lo disfrutes, fue hecho con mucho amor, te quiero un montonaso porlan❤️.
+          </p>
+        </div>
+      </section>
+    </main>
+
+
+  </div>
+
+
+  <!-- Player -->
+  <footer class="player">
+    <div class="player-left">
+      <img id="cover" src="img/portada1.jpg" alt="cover">
+      <div>
+        <h4 id="title">Canción 1</h4>
+        <p id="artist">Tu nombre</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="prev"><i data-lucide="skip-back"></i></button>
+      <button id="play"><i data-lucide="play"></i></button>
+      <button id="next"><i data-lucide="skip-forward"></i></button>
+    </div>
+
+    <audio id="audio" src="music/cancion1.mp3"></audio>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
